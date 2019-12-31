@@ -1,27 +1,23 @@
 let movies = [
   {
     id: 1,
-    name: "Soyoung",
-    age: 29,
-    gender: "female"
+    name: "Avengers",
+    score: 85,
   },
   {
     id: 2,
-    name: "Eunyoung",
-    age: 32,
-    gender: "female"
+    name: "Notebook",
+    score: 90,
   },
   {
     id: 3,
-    name: "Youngran",
-    age: 59,
-    gender: "female"
+    name: "Frozen2",
+    score: 92,
   },
   {
     id: 4,
-    name: "Chanki",
-    age: 29,
-    gender: "male"
+    name: "Logan",
+    score: 83,
   }
 ];
 
@@ -30,6 +26,16 @@ export const getMovies = () => movies;
 export const getById = id => {
   const filteredMovie = movies.filter(movie => movie.id === id);
   return filteredMovie[0];
+}
+
+export const addMovie = (name, score) => {
+  const newMovie = {
+    id: `${movies.length + 1}`,
+    name,
+    score
+  };
+  movies.push(newMovie);
+  return newMovie;
 }
 
 export const deleteMovie = id => {
