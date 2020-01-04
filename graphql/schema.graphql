@@ -4,7 +4,7 @@ type Movie {
   rating: Float!
   year: Int!
   genres: [String]!
-  summary: String!
+  description_intro: String!
   language: String!
   medium_cover_image: String!
 }
@@ -12,4 +12,5 @@ type Movie {
 type Query {
   movies(limit: Int, rating: Float): [Movie]
   movie(id: Int!): Movie
+  suggestions(id: Int!): [Movie]
 }
